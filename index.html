@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osama &amp; Hana — Engagement Invitation 💍</title>
+  <meta name="description"
+    content="You are invited to the Engagement of Osama &amp; Hana — 26 November 2026 at 05:00 PM, Pyramisa Hall." />
+  <meta property="og:title" content="Osama &amp; Hana — Engagement Invitation 💍" />
+  <meta property="og:description" content="26 November 2026 • 05:00 PM • At Pyramisa Hall — Join us!" />
+  <meta property="og:image" content="https://shahdhossam9.github.io/Osama-and-Hana-Invitation/Osama_and_Hana_Engagement_Invitation.png" />
+  <meta property="og:url" content="https://shahdhossam9.github.io/Osama-and-Hana-Invitation/" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:wght@500;600&family=Great+Vibes&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at center, #46070f 0%, #160103 100%);
+      color: #FAF3EE;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 16px;
+      gap: 22px;
+    }
+
+    .seal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: radial-gradient(circle at center, #4d0810 0%, #190104 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      text-align: center;
+      padding: 24px;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+
+    .seal-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .seal-pre {
+      font-size: 15px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(250, 243, 238, 0.8);
+    }
+
+    .seal-names {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(32px, 7vw, 50px);
+      letter-spacing: 6px;
+      color: #FFF9F5;
+    }
+
+    .open-btn {
+      margin-top: 10px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 18px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #3b050b;
+      background: linear-gradient(135deg, #FFF8F4 0%, #E8CFC8 100%);
+      border: none;
+      padding: 14px 36px;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .open-btn:hover {
+      transform: scale(1.04);
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6);
+    }
+
+    .player-shell {
+      position: relative;
+      width: min(420px, 90vw);
+      aspect-ratio: 9 / 16;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(250, 243, 238, 0.16);
+      background: #2b0307;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .countdown-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      color: #FFF8F4;
+      margin-bottom: -8px;
+    }
+
+    .countdown {
+      display: flex;
+      gap: 14px;
+      text-align: center;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+
+    .cd-box {
+      min-width: 68px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(250, 243, 238, 0.16);
+    }
+
+    .cd-num {
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      color: #FFF8F4;
+    }
+
+    .cd-lbl {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(250, 243, 238, 0.75);
+    }
+
+    .controls-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .btn {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #FAF3EE;
+      background: rgba(110, 14, 24, 0.65);
+      border: 1px solid rgba(250, 243, 238, 0.32);
+      padding: 10px 22px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .btn:hover {
+      background: rgba(148, 22, 36, 0.85);
+      border-color: rgba(250, 243, 238, 0.65);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="seal-overlay" id="sealOverlay">
+    <div class="seal-pre">The Engagement Of</div>
+    <div class="seal-names">OSAMA &amp; HANA</div>
+    <div class="seal-pre" style="font-size:13px; letter-spacing:3px;">26 November 2026 • 05:00 PM • Pyramisa Hall</div>
+    <button class="open-btn" id="openBtn">Open Invitation ✨</button>
+  </div>
+
+  <div class="player-shell">
+    <video id="invVideo" src="Osama_and_Hana_Engagement_Video.mp4" poster="Osama_and_Hana_Engagement_Invitation.png"
+      controls playsinline loop></video>
+  </div>
+
+  <div class="countdown-title">Counting down to our special day</div>
+  <div class="countdown" id="countdown">
+    <div class="cd-box">
+      <div class="cd-num" id="d">--</div>
+      <div class="cd-lbl">Days</div>
+    </div>
+    <div class="cd-box">
+      <div class="cd-num" id="h">--</div>
+      <div class="cd-lbl">Hours</div>
+    </div>
+    <div class="cd-box">
+      <div class="cd-num" id="m">--</div>
+      <div class="cd-lbl">Mins</div>
+    </div>
+    <div class="cd-box">
+      <div class="cd-num" id="s">--</div>
+      <div class="cd-lbl">Secs</div>
+    </div>
+  </div>
+
+  <div class="controls-bar">
+    <a class="btn" href="https://maps.app.goo.gl/5CDJK2ZLpGJNrBNR6?g_st=iw" target="_blank" rel="noopener noreferrer">📍
+      Location / Map</a>
+    <a class="btn" href="Osama_and_Hana_Engagement_Video.mp4" download>Download Video (MP4)</a>
+    <a class="btn" href="Osama_and_Hana_Engagement_Invitation.png" download>Download Card (HD PNG)</a>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById('openBtn');
+    const sealOverlay = document.getElementById('sealOverlay');
+    const invVideo = document.getElementById('invVideo');
+
+    openBtn.addEventListener('click', () => {
+      sealOverlay.classList.add('hidden');
+      invVideo.play().catch(() => { });
+    });
+
+    const target = new Date('2026-11-26T17:00:00+02:00').getTime();
+    function tick() {
+      const diff = Math.max(0, target - Date.now());
+      document.getElementById('d').textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+      document.getElementById('h').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+      document.getElementById('m').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+      document.getElementById('s').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+    }
+    tick();
+    setInterval(tick, 1000);
+  </script>
+</body>
+
+</html>
